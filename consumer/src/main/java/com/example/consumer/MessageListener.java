@@ -15,4 +15,11 @@ public class MessageListener {
     public void listenMessage1(String message){
         System.out.println("Listening message 1: " +  message);
     }
+
+    @KafkaListener(topics = "my-topic-new", groupId = "himb")
+    public void debug(Object payload) {
+        System.out.println(payload);
+    }
+
+
 }
